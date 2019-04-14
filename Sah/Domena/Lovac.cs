@@ -21,11 +21,12 @@ namespace Sah.Domena
             int vertikalno = Math.Abs(this.Pozicija.Vertikalno - novaPozicija.Vertikalno);
             if (horizontalno != vertikalno)
                 throw new Exception("Illegal move");
+            Figura figura = null;
             if (this.Pozicija.Horizontalno > novaPozicija.Horizontalno )
             {
-                for (int i = novaPozicija.Horizontalno; i < this.Pozicija.Horizontalno; i++)
+                for (int i = this.Pozicija.Horizontalno; i > novaPozicija.Horizontalno; i--)
                 {
-                    vertikalno = Math.Abs(this.Pozicija.Vertikalno - novaPozicija.Vertikalno);
+                   
                 }
             }
 
