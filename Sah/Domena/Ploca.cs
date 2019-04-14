@@ -127,7 +127,7 @@ namespace Sah.Domena
             stanje[0, 7] = new Top(Boja.Bijeli,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(7));
             for (int i = 0; i < 8; i++)
             {
-                stanje[1, i] = new Pjesak(Boja.Bijeli,i).PostaviPoziciju(new Pozicija().PostaviHorizontalno(1).PostaviVertikalno(i));
+                stanje[1, i] = new Pjesak(Boja.Bijeli,i+1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(1).PostaviVertikalno(i));
             }
             stanje[7, 0] = new Top(Boja.Crni,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(0));
             stanje[7, 1] = new Skakac(Boja.Crni,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(1));
@@ -139,7 +139,7 @@ namespace Sah.Domena
             stanje[7, 7] = new Top(Boja.Crni,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(7));
             for (int i = 0; i < 8; i++)
             {
-                stanje[6, i] = new Pjesak(Boja.Crni,i).PostaviPoziciju(new Pozicija().PostaviHorizontalno(6).PostaviVertikalno(i));
+                stanje[6, i] = new Pjesak(Boja.Crni,i+1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(6).PostaviVertikalno(i));
             }
         }
 

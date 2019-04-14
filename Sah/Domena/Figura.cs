@@ -17,7 +17,8 @@ namespace Sah.Domena
         public int Id { get; protected set; }
         public Figura()
         {
-            
+            this.OnPozicijaSeMijenja += PozicijaSeMijenja;
+            this.OnPozicijaPromijenjena += PozicijaPromijenjena;
         }
         public Figura PostaviPoziciju(Pozicija pozicija )
         {
@@ -29,8 +30,7 @@ namespace Sah.Domena
         
         public Figura PostaviPoziciju(Pozicija pozicija, Ploca ploca)
         {
-            this.OnPozicijaSeMijenja += PozicijaSeMijenja;
-            this.OnPozicijaPromijenjena += PozicijaPromijenjena;
+            
             OnPozicijaSeMijenja(this, new PozicijaEventArgs { Pozicija = pozicija, Ploca = ploca });
             OnPozicijaPromijenjena(this, new PozicijaEventArgs { Pozicija = pozicija, Ploca = ploca });
             this.Pozicija = pozicija;
@@ -52,6 +52,8 @@ namespace Sah.Domena
         {
             if (this.Pozicija.Horizontalno == pozicija.Horizontalno && this.Pozicija.Vertikalno == pozicija.Vertikalno)
                 throw new NoMoveException("No move");
+            if (pozicija.Horizontalno < 0 || pozicija.Horizontalno > 7 || pozicija.Vertikalno < 0 || pozicija.Vertikalno > 7)
+                throw new Exception("Illegal move");
             return true;
         }
         public void PozicijaSeMijenja(object sender, EventArgs eventArgs)

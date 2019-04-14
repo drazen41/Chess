@@ -19,6 +19,7 @@ namespace Sah.Domena
             base.LegalanPotez(novaPozicija, ploca);
            
             Figura figura = null;
+
             if (this.Pozicija.Vertikalno < novaPozicija.Vertikalno)
             {
                 for (int i = this.Pozicija.Vertikalno + 1; i < novaPozicija.Vertikalno; i++)
