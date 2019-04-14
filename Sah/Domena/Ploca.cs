@@ -11,6 +11,7 @@ namespace Sah.Domena
         private Figura[,] stanje ;
         private Dictionary<string, Figura> dict;
         private Dictionary<Pozicija, Figura> pozicijaFigura;
+        private HashSet<Figura> hashFigura;
         public static int Potez = 0;
 
         public static bool KraljSahiran { get; internal set; }
@@ -20,6 +21,7 @@ namespace Sah.Domena
             stanje = new Figura[8, 8];
             dict = new Dictionary<string, Figura>();
             pozicijaFigura = new Dictionary<Pozicija, Figura>();
+            hashFigura = new HashSet<Figura>();
             Inicijalizacija();
             PostaviDict();
         }
@@ -39,9 +41,18 @@ namespace Sah.Domena
                     kol = PoljeZaKolonu(j) + (i+1);
                     dict[kol] = stanje[i, j];
                     if (stanje[i,j] != null)
+                    {
                         pozicijaFigura[stanje[i, j].Pozicija] = stanje[i, j];
+                        hashFigura.Add(stanje[i, j]);
+                    }
+                        
+
                 }
             }
+        }
+        public Figura VratiFiguruIstogTipaBoje(Figura figura)
+        {
+            return hashFigura.Where(x => x.Boja == figura.Boja && x.GetType()== figura.GetType()).FirstOrDefault();
         }
         public string PoljeZaKolonu(int kolona )
         {

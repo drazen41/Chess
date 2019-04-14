@@ -29,5 +29,14 @@ namespace Sah.Domena
             //return this.Boja.ToString() + " Kralj " + pozicija.Horizontalno + "," + pozicija.Vertikalno;
             return "K" + Ploca.SkracenaBoja(this.Boja) + "-" + this.Id;
         }
+        public static Kralj VratiKraljaSaPloce(Figura figura, Ploca ploca)
+        {
+            Kralj kralj = null;
+            if (figura.Boja == Boja.Bijeli)
+                kralj = new Kralj(Boja.Bijeli);
+            else
+                kralj = new Kralj(Boja.Crni);
+            return ploca.VratiFiguruIstogTipaBoje(kralj) as Kralj;
+        }
     }
 }

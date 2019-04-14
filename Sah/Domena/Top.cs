@@ -68,8 +68,7 @@ namespace Sah.Domena
             }
             if (this.Pozicija.Horizontalno != novaPozicija.Horizontalno && this.Pozicija.Vertikalno != novaPozicija.Vertikalno)
                 throw new Exception("Top nije lovac.");
-            if (figura != null && figura is Kralj && figura.Boja != this.Boja)
-                Ploca.KraljSahiran = true;
+            var kralj = Kralj.VratiKraljaSaPloce(this, ploca);
 
             return true;
         }

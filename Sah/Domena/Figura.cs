@@ -15,6 +15,7 @@ namespace Sah.Domena
         public Pozicija Pozicija { get; set; }
         public Boja Boja { get; protected set; }
         public int Id { get; protected set; }
+
         public Figura()
         {
             this.OnPozicijaSeMijenja += PozicijaSeMijenja;
