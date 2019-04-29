@@ -41,14 +41,18 @@ namespace Sah
                     poz = ploca.PozicijaZaPolje(potez);
 
                     figura = ploca.VratiFiguru(poz);
-                    if (figura != null && bijeli.DobraFigura(figura))
-                        ok = true;
+                    if (figura == null )
+                    {
+                        continue;
+                    }
+                        
                     Console.Write("Odigrajte potez (npr. A3):");
                     potez = Console.ReadLine();
                     poz = ploca.PozicijaZaPolje(potez);
                     try
                     {
-                        figura = figura.PostaviPoziciju(poz, ploca);
+                        bijeli.OdigrajPotez(figura,poz,ploca);
+                        ok = true;
                     }
                     catch (Exception ex)
                     {
@@ -69,14 +73,14 @@ namespace Sah
                     potez = Console.ReadLine();
                     poz = ploca.PozicijaZaPolje(potez);
                     figura = ploca.VratiFiguru(poz);
-                    if (figura != null && crni.DobraFigura(figura))
+                    if (figura != null)
                         ok = true;
                     Console.Write("Odigrajte potez (npr. A3):");
                     potez = Console.ReadLine();
                     poz = ploca.PozicijaZaPolje(potez);
                     try
                     {
-                        figura = figura.PostaviPoziciju(poz, ploca);
+                        crni.OdigrajPotez(figura,poz,ploca);
                         ok = true;
                     }
                     catch (Exception ex)

@@ -47,6 +47,7 @@
     <Compile Include="Domena\Events\PozicijaEventArgs.cs" />
     <Compile Include="Domena\Figura.cs" />
     <Compile Include="Domena\Igrac.cs" />
+    <Compile Include="Domena\Iznimke\IllegalMoveException.cs" />
     <Compile Include="Domena\Iznimke\NoMoveException.cs" />
     <Compile Include="Domena\Kralj.cs" />
     <Compile Include="Domena\Kraljica.cs" />

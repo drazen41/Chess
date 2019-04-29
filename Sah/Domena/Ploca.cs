@@ -25,7 +25,20 @@ namespace Sah.Domena
             Inicijalizacija();
             PostaviDict();
         }
-
+        public Ploca(List<Figura> listaFigura)
+        {
+            stanje = new Figura[8, 8];
+            dict = new Dictionary<string, Figura>();
+            pozicijaFigura = new Dictionary<Pozicija, Figura>();
+            hashFigura = new HashSet<Figura>();
+            foreach (var figura in listaFigura)
+            {
+                var hor = figura.Pozicija.Horizontalno;
+                var ver = figura.Pozicija.Vertikalno;
+                stanje[hor, ver] = figura;
+            }
+            PostaviDict();
+        }
         internal bool IgraGotova()
         {
             throw new NotImplementedException();

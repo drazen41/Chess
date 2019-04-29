@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sah.Domena.Iznimke;
 
 namespace Sah.Domena
 {
@@ -22,11 +23,11 @@ namespace Sah.Domena
             int vertikalno = this.Pozicija.Vertikalno > novaPozicija.Vertikalno ?
                 this.Pozicija.Vertikalno - novaPozicija.Vertikalno : novaPozicija.Vertikalno - this.Pozicija.Vertikalno;
             if (!((horizontalno == 2 && vertikalno == 1) || (horizontalno == 1 && vertikalno == 2)))
-                throw new Exception("Illegal move");
+                throw new IllegalMoveException("Illegal move");
 
             var figura = ploca.VratiFiguru(novaPozicija);
             if (figura != null && figura.Boja == this.Boja)
-                throw new Exception("Figura " + figura.GetType().Name + " na putu.");
+                throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
             return true;
         }
 

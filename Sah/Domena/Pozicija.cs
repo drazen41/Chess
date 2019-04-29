@@ -19,14 +19,33 @@ namespace Sah.Domena
         //}
         public Pozicija PostaviHorizontalno(int vrijednost)
         {
+            if (this == null)
+            {
+                Pozicija pozicija = new Pozicija();
+                pozicija.Horizontalno = vrijednost;
+                return pozicija;
+            }
+            else
+            {
+                this.Horizontalno = vrijednost;
+                return this;
+            }
             
-            this.Horizontalno = vrijednost;
-            return this;
         }
         public Pozicija PostaviVertikalno(int vrijednost)
         {
-            this.Vertikalno = vrijednost;
-            return this;
+            if (this == null)
+            {
+                Pozicija pozicija = new Pozicija();
+                pozicija.Vertikalno = vrijednost;
+                return pozicija;
+            }
+            else
+            {
+                this.Vertikalno = vrijednost;
+                return this;
+            }
+            
         }
         
 

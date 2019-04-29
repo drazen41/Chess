@@ -18,6 +18,7 @@ namespace Sah.Domena
 
         public Figura()
         {
+            this.Pozicija = new Pozicija();
             this.OnPozicijaSeMijenja += PozicijaSeMijenja;
             this.OnPozicijaPromijenjena += PozicijaPromijenjena;
         }
@@ -25,6 +26,8 @@ namespace Sah.Domena
         {
             if (Ploca.Potez != 0)
                 throw new Exception("Krivi poziv metode");
+            if (this.Pozicija == null)
+                this.Pozicija = new Pozicija();
             this.Pozicija = pozicija;
             return this;
         }

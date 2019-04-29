@@ -17,6 +17,12 @@ namespace Sah.Domena
         public override bool LegalanPotez(Pozicija novaPozicija, Ploca ploca)
         {
             base.LegalanPotez(novaPozicija, ploca);
+            Top top = new Top(this.Boja, this.Id);
+            top.Pozicija.PostaviHorizontalno(this.Pozicija.Horizontalno).PostaviVertikalno(this.Pozicija.Vertikalno);
+            bool legalan = top.LegalanPotez(novaPozicija, ploca);
+            Lovac lovac = new Lovac(this.Boja, this.Id);
+            lovac.Pozicija.PostaviHorizontalno(this.Pozicija.Horizontalno).PostaviVertikalno(this.Pozicija.Vertikalno);
+            legalan = lovac.LegalanPotez(novaPozicija, ploca);
 
 
 

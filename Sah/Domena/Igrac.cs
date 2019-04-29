@@ -17,5 +17,11 @@ namespace Sah.Domena
         {
             return this.Boja == figura.Boja;
         }
+        public Figura OdigrajPotez(Figura figura, Pozicija pozicija, Ploca ploca)
+        {
+            if (!DobraFigura(figura))
+                throw new Exception("Kriva figura.");
+            return figura.PostaviPoziciju(pozicija,ploca);
+        }
     }
 }

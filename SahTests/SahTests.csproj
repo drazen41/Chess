@@ -50,11 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adder.cs" />
+    <Compile Include="DomenaTest\SkakacTest.cs" />
+    <Compile Include="DomenaTest\LovacTest.cs" />
+    <Compile Include="DomenaTest\PlocaTest.cs" />
     <Compile Include="SvastaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Sah\Sah.csproj">
+      <Project>{84fc7703-b562-4d86-a329-0469884469a9}</Project>
+      <Name>Sah</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

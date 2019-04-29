@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sah.Domena.Iznimke;
 
 namespace Sah.Domena
 {
@@ -20,13 +21,91 @@ namespace Sah.Domena
             int horizontalno = Math.Abs(this.Pozicija.Horizontalno - novaPozicija.Horizontalno);
             int vertikalno = Math.Abs(this.Pozicija.Vertikalno - novaPozicija.Vertikalno);
             if (horizontalno != vertikalno)
-                throw new Exception("Illegal move");
+                throw new IllegalMoveException("Illegal move");
             Figura figura = null;
             if (this.Pozicija.Horizontalno > novaPozicija.Horizontalno )
             {
+                int ver = this.Pozicija.Vertikalno;
                 for (int i = this.Pozicija.Horizontalno; i > novaPozicija.Horizontalno; i--)
                 {
-                   
+                    int hor = i - 1;
+                    if (this.Pozicija.Vertikalno > novaPozicija.Vertikalno)
+                    {
+                        figura = ploca.VratiFiguru(new Pozicija().PostaviHorizontalno(hor).PostaviVertikalno(--ver));
+                        if (figura != null)
+                        {
+                            if (hor == novaPozicija.Horizontalno && ver == novaPozicija.Vertikalno)
+                            {
+                                if (this.Boja == figura.Boja)
+                                    throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                            else
+                            {
+                                throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        figura = ploca.VratiFiguru(new Pozicija().PostaviHorizontalno(hor).PostaviVertikalno(++ver));
+                        if (figura != null)
+                        {
+                            if (hor == novaPozicija.Horizontalno && ver == novaPozicija.Vertikalno)
+                            {
+                                if (this.Boja == figura.Boja)
+                                    throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                            else
+                            {
+                                throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                        }
+                    }
+                }
+            } else
+            {
+                int ver = this.Pozicija.Vertikalno;
+                for (int i = this.Pozicija.Horizontalno; i < novaPozicija.Horizontalno; i++)
+                {
+                    int hor = i + 1;
+                    
+                    if (this.Pozicija.Vertikalno > novaPozicija.Vertikalno)
+                    {
+                        //ver = this.Pozicija.Vertikalno - i;
+                        figura = ploca.VratiFiguru(new Pozicija().PostaviHorizontalno(hor).PostaviVertikalno(--ver));
+                        if (figura != null)
+                        {
+                            if (hor == novaPozicija.Horizontalno && ver == novaPozicija.Vertikalno)
+                            {
+                                if (this.Boja == figura.Boja)
+                                    throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                            else
+                            {
+                                throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        
+                        figura = ploca.VratiFiguru(new Pozicija().PostaviHorizontalno(hor).PostaviVertikalno(++ver));
+                        if (figura != null)
+                        {
+                            if (hor == novaPozicija.Horizontalno && ver == novaPozicija.Vertikalno)
+                            {
+                                if (this.Boja == figura.Boja)
+                                    throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                            else
+                            {
+                                throw new IllegalMoveException("Figura " + figura.GetType().Name + " na putu.");
+                            }
+                        }
+
+                    }
+                    
+                        
                 }
             }
 
