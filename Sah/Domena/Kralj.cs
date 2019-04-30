@@ -18,7 +18,8 @@ namespace Sah.Domena
         public override bool LegalanPotez(Pozicija novaPozicija, Ploca ploca)
         {
             base.LegalanPotez(novaPozicija, ploca);
-            
+            if (Math.Abs(this.Pozicija.Horizontalno - novaPozicija.Horizontalno) > 1 || Math.Abs(this.Pozicija.Vertikalno - novaPozicija.Vertikalno) > 1)
+                throw new IllegalMoveException("Illegal move", true);
 
 
             return true;

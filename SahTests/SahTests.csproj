@@ -53,6 +53,8 @@
     <Compile Include="DomenaTest\SkakacTest.cs" />
     <Compile Include="DomenaTest\LovacTest.cs" />
     <Compile Include="DomenaTest\PlocaTest.cs" />
+    <Compile Include="DomenaTest\KraljicaTest.cs" />
+    <Compile Include="DomenaTest\KraljTest.cs" />
     <Compile Include="SvastaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

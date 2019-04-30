@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sah.Domena.Iznimke;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace Sah.Domena
 {
     public class Kraljica : Figura
     {
-        public Kraljica(Boja boja)
+        public Kraljica(Boja boja, int id)
         {
             this.Boja = boja;
-            this.Id = 1;
+            this.Id = id;
         }
 
         public override bool LegalanPotez(Pozicija novaPozicija, Ploca ploca)
@@ -19,10 +20,27 @@ namespace Sah.Domena
             base.LegalanPotez(novaPozicija, ploca);
             Top top = new Top(this.Boja, this.Id);
             top.Pozicija.PostaviHorizontalno(this.Pozicija.Horizontalno).PostaviVertikalno(this.Pozicija.Vertikalno);
-            bool legalan = top.LegalanPotez(novaPozicija, ploca);
             Lovac lovac = new Lovac(this.Boja, this.Id);
             lovac.Pozicija.PostaviHorizontalno(this.Pozicija.Horizontalno).PostaviVertikalno(this.Pozicija.Vertikalno);
-            legalan = lovac.LegalanPotez(novaPozicija, ploca);
+            bool legalan = true;
+            try
+            {
+                legalan = top.LegalanPotez(novaPozicija, ploca);
+                
+            }
+            catch (IllegalMoveException ime)
+            {
+                if (ime.NemogucPotez)
+                {
+                    legalan = lovac.LegalanPotez(novaPozicija, ploca);
+
+                }
+                else
+                    throw ime;
+                    
+
+            }
+            
 
 
 

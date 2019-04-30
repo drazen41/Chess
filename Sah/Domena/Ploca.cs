@@ -144,8 +144,8 @@ namespace Sah.Domena
             stanje[0, 0] = new Top(Boja.Bijeli,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(0));
             stanje[0, 1] = new Skakac(Boja.Bijeli,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(1));
             stanje[0, 2] = new Lovac(Boja.Bijeli,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(2));
-            stanje[0, 3] = new Kraljica(Boja.Bijeli).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(3));
-            stanje[0, 4] = new Kralj(Boja.Bijeli).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(4));
+            stanje[0, 3] = new Kralj(Boja.Bijeli).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(4));
+            stanje[0, 4] = new Kraljica(Boja.Bijeli,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(3));
             stanje[0, 5] = new Lovac(Boja.Bijeli,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(5));
             stanje[0, 6] = new Skakac(Boja.Bijeli,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(6));
             stanje[0, 7] = new Top(Boja.Bijeli,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(0).PostaviVertikalno(7));
@@ -156,8 +156,8 @@ namespace Sah.Domena
             stanje[7, 0] = new Top(Boja.Crni,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(0));
             stanje[7, 1] = new Skakac(Boja.Crni,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(1));
             stanje[7, 2] = new Lovac(Boja.Crni,1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(2));
-            stanje[7, 3] = new Kraljica(Boja.Crni).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(3));
-            stanje[7, 4] = new Kralj(Boja.Crni).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(4));
+            stanje[7, 3] = new Kralj(Boja.Crni).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(4));
+            stanje[7, 4] = new Kraljica(Boja.Crni, 1).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(3));
             stanje[7, 5] = new Lovac(Boja.Crni,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(5));
             stanje[7, 6] = new Skakac(Boja.Crni,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(6));
             stanje[7, 7] = new Top(Boja.Crni,2).PostaviPoziciju(new Pozicija().PostaviHorizontalno(7).PostaviVertikalno(7));

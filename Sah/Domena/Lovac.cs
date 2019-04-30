@@ -21,7 +21,7 @@ namespace Sah.Domena
             int horizontalno = Math.Abs(this.Pozicija.Horizontalno - novaPozicija.Horizontalno);
             int vertikalno = Math.Abs(this.Pozicija.Vertikalno - novaPozicija.Vertikalno);
             if (horizontalno != vertikalno)
-                throw new IllegalMoveException("Illegal move");
+                throw new IllegalMoveException("Illegal move",true);
             Figura figura = null;
             if (this.Pozicija.Horizontalno > novaPozicija.Horizontalno )
             {
