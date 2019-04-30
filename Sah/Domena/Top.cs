@@ -42,6 +42,7 @@ namespace Sah.Domena
                     else if (figura != null && figura.Pozicija.Horizontalno < novaPozicija.Horizontalno)
                         throw new Exception("Figura " + figura.GetType().Name + " na putu.");
                 }
+
             }
             
             if (this.Pozicija.Horizontalno < novaPozicija.Horizontalno)
