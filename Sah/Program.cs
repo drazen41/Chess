@@ -34,12 +34,14 @@ namespace Sah
                 bool ok = false;
                 Figura figura = null;
                 string potez = "";
+                string potezIgraca = "";
                 while (!ok)
                 {
+                    potezIgraca = "";
                     Console.Write("Odaberite figuru iz polja (npr.A1):");
                     potez = Console.ReadLine();
                     poz = ploca.PozicijaZaPolje(potez);
-
+                    potezIgraca += potez;
                     figura = ploca.VratiFiguru(poz);
                     if (figura == null )
                     {
@@ -48,11 +50,13 @@ namespace Sah
                         
                     Console.Write("Odigrajte potez (npr. A3):");
                     potez = Console.ReadLine();
+                    potezIgraca += potez;
                     poz = ploca.PozicijaZaPolje(potez);
                     try
                     {
                         bijeli.OdigrajPotez(figura,poz,ploca);
                         ok = true;
+                        ploca.potezi.Add(potezIgraca);
                     }
                     catch (Exception ex)
                     {
@@ -67,21 +71,26 @@ namespace Sah
 
                 Console.WriteLine("Crni na potezu");
                 ok = false;
+                
                 while(!ok)
                 {
+                    potezIgraca = "";
                     Console.Write("Odaberite figuru iz polja (npr.A1):");
                     potez = Console.ReadLine();
+                    potezIgraca += potez;
                     poz = ploca.PozicijaZaPolje(potez);
                     figura = ploca.VratiFiguru(poz);
                     if (figura != null)
                         ok = true;
                     Console.Write("Odigrajte potez (npr. A3):");
                     potez = Console.ReadLine();
+                    potezIgraca += potez;
                     poz = ploca.PozicijaZaPolje(potez);
                     try
                     {
                         crni.OdigrajPotez(figura,poz,ploca);
                         ok = true;
+                        ploca.potezi.Add(potezIgraca);
                     }
                     catch (Exception ex)
                     {

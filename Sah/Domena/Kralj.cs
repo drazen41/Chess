@@ -39,5 +39,10 @@ namespace Sah.Domena
                 kralj = new Kralj(Boja.Crni);
             return ploca.VratiFiguruIstogTipaBoje(kralj) as Kralj;
         }
+
+        public override bool PodZastitom(Ploca ploca)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -60,6 +60,7 @@ namespace Sah.Domena
                 throw new Exception("Illegal move");
             return true;
         }
+        public abstract bool PodZastitom(Ploca ploca);
         public void PozicijaSeMijenja(object sender, EventArgs eventArgs)
         {
             Figura figura = (Figura)sender;

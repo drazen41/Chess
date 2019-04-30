@@ -20,7 +20,10 @@ namespace Sah.Domena
         public Figura OdigrajPotez(Figura figura, Pozicija pozicija, Ploca ploca)
         {
             if (!DobraFigura(figura))
+            {
                 throw new Exception("Kriva figura.");
+
+            }
             return figura.PostaviPoziciju(pozicija,ploca);
         }
     }

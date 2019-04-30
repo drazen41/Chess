@@ -13,7 +13,7 @@ namespace Sah.Domena
         private Dictionary<Pozicija, Figura> pozicijaFigura;
         private HashSet<Figura> hashFigura;
         public static int Potez = 0;
-
+        public List<string> potezi = new List<string>();
         public static bool KraljSahiran { get; internal set; }
 
         public Ploca()

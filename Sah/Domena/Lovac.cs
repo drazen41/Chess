@@ -113,6 +113,11 @@ namespace Sah.Domena
             return true;
         }
 
+        public override bool PodZastitom(Ploca ploca)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString(Pozicija pozicija)
         {
             //return this.Boja.ToString() + " Lovac " + pozicija.Horizontalno + "," + pozicija.Vertikalno;
