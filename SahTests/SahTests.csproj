@@ -55,6 +55,7 @@
     <Compile Include="DomenaTest\PlocaTest.cs" />
     <Compile Include="DomenaTest\KraljicaTest.cs" />
     <Compile Include="DomenaTest\KraljTest.cs" />
+    <Compile Include="StockfishTest\StockfishServiceTest.cs" />
     <Compile Include="SvastaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\Sah\Sah.csproj">
       <Project>{84fc7703-b562-4d86-a329-0469884469a9}</Project>
       <Name>Sah</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stockfish\Stockfish.csproj">
+      <Project>{a94f97df-a147-4c14-904c-f9feb849ff1b}</Project>
+      <Name>Stockfish</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
